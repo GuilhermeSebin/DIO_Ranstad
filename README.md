@@ -1,4 +1,4 @@
-# DIO_Ranstad_Bootcamp---E-commerce
+# DIO_Ranstad---E-commerce
 
 Criação de um Projeto conceitual de Banco de Dados para uma plataforma de E-commerce.
 
@@ -20,4 +20,8 @@ Narrativa - Pedido
 Narrativa - Fornecedor e Estoque
 - Um fornecedor possui estoque de produtos
 - Vários produtos são ofertados pelo fornecedor
-- 
+
+- Cliente PJ e PF – Uma conta pode ser PJ ou PF, mas não pode ter as duas informações;
+- Pagamento – Pode ter cadastrado mais de uma forma de pagamento;
+- Entrega – Possui status e código de rastreio;
+
