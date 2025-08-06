@@ -18,4 +18,6 @@ Narrativa - Pedido
 - O pedido pode ser cancelado
 
 Narrativa - Fornecedor e Estoque
+- Um fornecedor possui estoque de produtos
+- Vários produtos são ofertados pelo fornecedor
 - 
