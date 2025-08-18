@@ -175,3 +175,77 @@ insert into seller (SocialName, AbstName, CNPJ, CPF, location, contact) values
 insert into productSeller (idPseller, idProduct, prodQuantity) values
 	(1, 1, 80),
     (2, 2, 10);
+
+
+
+-- Exemplos de consultas:
+
+-- Produtos de um pedido específico (ex.: pedido 1)
+select o.idOrder, p.Pname, po.poQuantity, po.poStatus
+from productOrder po
+join product p on po.idPOproduct = p.idProduct
+join orders o on po.idPOorder = o.idOrder
+where o.idOrder = 1;
+
+-- Quantidade total de itens por pedido
+select o.idOrder, count(po.idPOproduct) as total_itens, sum(po.poQuantity) as quantidade_total
+from orders o
+join productOrder po on o.idOrder = po.idPOorder
+group by o.idOrder;
+
+-- Pedidos realizados por cada cliente
+select c.Fname, c.Lname, o.idOrder, o.orderStatus, o.orderDescription
+from clients c
+left join orders o on c.idClient = o.idOrderClient;
+
+-- Clientes que fizeram compras pagas em dinheiro
+select distinct c.Fname, c.Lname
+from clients c
+join orders o on c.idClient = o.idOrderClient
+where o.paymentCash = true;
+
+-- Mostrar produtos e suas localizações de estoque
+select p.Pname, ps.storageLocation, ps.quantity, sl.location
+from product p
+join storageLocation sl on p.idProduct = sl.idLproduct
+join productStorage ps on sl.idLstorage = ps.idProdStorage;
+
+-- Quantidade de produtos por cidade de armazenamento
+select ps.storageLocation, sum(ps.quantity) as total_em_estoque
+from productStorage ps
+group by ps.storageLocation;
+
+-- Produtos fornecidos por cada fornecedor
+select s.SocialName as Fornecedor, p.Pname, ps.Quantity
+from productSupplier ps
+join supplier s on ps.idPsSupplier = s.idSupplier
+join product p on ps.idPsProduct = p.idProduct;
+
+-- Produtos vendidos por cada vendedor
+select se.SocialName as Vendedor, p.Pname, ps.prodQuantity
+from productSeller ps
+join seller se on ps.idPseller = se.idSeller
+join product p on ps.idProduct = p.idProduct;
+
+-- Produto mais bem avaliado
+select Pname, Avaluation
+from product
+order by Avaluation desc
+limit 1;
+
+-- Cliente com mais pedidos
+select c.Fname, c.Lname, count(o.idOrder) as total_pedidos
+from clients c
+join orders o on c.idClient = o.idOrderClient
+group by c.idClient
+order by total_pedidos desc
+limit 1;
+
+-- Total de vendas por cliente (considerando soma das quantidades de itens)
+select c.Fname, c.Lname, sum(po.poQuantity) as total_itens_comprados
+from clients c
+join orders o on c.idClient = o.idOrderClient
+join productOrder po on o.idOrder = po.idPOorder
+group by c.idClient
+order by total_itens_comprados desc;
+
