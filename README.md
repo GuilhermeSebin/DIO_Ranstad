@@ -1,4 +1,4 @@
-# DIO_Ranstad---E-commerce
+# DIO_Randstad---E-commerce
 
 Criação de um Projeto conceitual de Banco de Dados para uma plataforma de E-commerce.
 
