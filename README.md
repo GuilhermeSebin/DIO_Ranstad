@@ -1,27 +1,11 @@
-# DIO_Randstad: E-commerce
+# DIO_Randstad: Análise de Dados 2025
 
-Criação de um Projeto conceitual de Banco de Dados para uma plataforma de E-commerce.
 
-Narrativa - Produto
-- Produtos são vendidos por uma única plataforma online. Contudo, estes podem ter vendedores distintos (terceiros).
-- Cada produto possui um fornecedor
-- Um ou mais produtos podem compor um pedido
-
-Narrativa - Cliente
-- Cliente pode se cadastrar no site com CPF ou CNPJ
-- Endereço do cliente determinará o valor do frete
-- Um cliente pode realizar mais de um pedido. Este tem um período de carência para devolução do produto
-
-Narrativa - Pedido
-- Pedidos são criados por clientes e possuem informações de compra, endereço e status da entrega
-- Um ou mais produtos compõem um pedido
-- O pedido pode ser cancelado
-
-Narrativa - Fornecedor e Estoque
-- Um fornecedor possui estoque de produtos
-- Vários produtos são ofertados pelo fornecedor
-
-- Cliente PJ e PF – Uma conta pode ser PJ ou PF, mas não pode ter as duas informações;
-- Pagamento – Pode ter cadastrado mais de uma forma de pagamento;
-- Entrega – Possui status e código de rastreio;
+-Versionamento com Git e GitHub
+-Estudos sobre análise de dados com Bancos de Dados Relacionais e MySQL
+-Manipulação de banco de dados relacionais
+-Machine Learning com Azure
+-Análises de dados com Excel e Copilot
+-Fundamentos de BI
+-Visualização de dados e relatórios com Power BI
 
